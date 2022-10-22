@@ -26,6 +26,8 @@ import java.util.Optional;
 public class CourseTypeService implements ICourseTypeService {
     @Autowired
     CourseTypeRepository courseTypeRepository;
+    @Autowired
+    ModelMapper modelMapper;
     @Override
     public PagedResponse<CourseTypeResponse> getAllCouseType(int page, int size) {
         if(page < 0) {
@@ -46,9 +48,6 @@ public class CourseTypeService implements ICourseTypeService {
         return new PagedResponse<>(courseTypeResponses, courseTypes.getNumber(), courseTypes.getSize(),
                 courseTypes.getTotalElements(), courseTypes.getTotalPages(), courseTypes.isLast());
     }
-
-    @Autowired
-    ModelMapper modelMapper;
 
     @Override
     public CourseType create(CourseTypeRequest courseTypeRequest) {
