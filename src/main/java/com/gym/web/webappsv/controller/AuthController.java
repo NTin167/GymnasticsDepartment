@@ -58,7 +58,6 @@ public class AuthController {
         String jwt = tokenProvider.generateToken(authentication);
         Long id = tokenProvider.getUserIdFromJWT(jwt);
         Optional<User> user = userRepository.findById(id);
-        System.out.println(user.get().getRoles());
         return ResponseEntity.ok(new JwtAuthenticationResponse(jwt));
     }
 
