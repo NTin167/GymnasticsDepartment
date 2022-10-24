@@ -1,7 +1,6 @@
 package com.gym.web.webappsv.DTO;
 
 public class PersonalTrainerDTO {
-    public PersonalTrainerDTO personalTrainerDTO;
     private Long id;
     private String name;
     private String gender;
@@ -10,9 +9,6 @@ public class PersonalTrainerDTO {
     private String dob;
     private String phoneNumber;
     private boolean status;
-    public PersonalTrainerDTO(PersonalTrainerDTO personalTrainerDTO) {
-        this.personalTrainerDTO = personalTrainerDTO;
-    }
     public PersonalTrainerDTO(Long id, String name, String gender, String address, String identifyCard, String dob, String phoneNumber) {
         this.id = id;
         this.name = name;
