@@ -6,7 +6,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -16,12 +15,10 @@ import java.util.List;
 @NoArgsConstructor
 public class Subscribe extends DateAudit {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name = "status")
     private int status;
-    @Column(name = "date_subscribe")
-    private Date dateSubscribe;
 
     @OneToMany(mappedBy = "subscribe")
     private List<Bill> bills;

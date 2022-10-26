@@ -1,6 +1,7 @@
 package com.gym.web.webappsv.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.gym.web.webappsv.model.audit.DateAudit;
 import lombok.*;
 
@@ -34,15 +35,18 @@ public class Class extends DateAudit {
 
     // ManyToOne có nhiều lớp thuộc 1 PT.
     @ManyToOne()
+    @JsonIgnore
     @JoinColumn(name = "personaltrainer_id", nullable = false)// thông qua khóa ngoại personaltrainer_id
     @EqualsAndHashCode.Exclude // không sử dụng trường này trong equals và hash code
     @ToString.Exclude // không sử dụng trường này trong toString.
     private PersonalTrainer personalTrainer;
 
     @ManyToOne()
+    @JsonIgnore
     @JoinColumn(name = "course_id", nullable = false)
     private Course course;
 
     @OneToMany(mappedBy = "aClass")
     private List<Subscribe> subscribes;
+
 }

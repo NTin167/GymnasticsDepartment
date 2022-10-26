@@ -1,10 +1,13 @@
 package com.gym.web.webappsv.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Entity
@@ -32,5 +35,17 @@ public class Customer {
     private String phoneNumber;
 
     @OneToMany(mappedBy = "customer")
+    @JsonIgnore
     private List<Subscribe> subscribes;
+    public List<Subscribe> getSubscribes() {
+        return subscribes == null ? null : new ArrayList<>(subscribes);
+    }
+    public void setSubscribe(List<Subscribe> subscribes) {
+        if(subscribes == null) {
+            this.subscribes = null;
+        }
+        else {
+            this.subscribes = Collections.unmodifiableList(subscribes);
+        }
+    }
 }

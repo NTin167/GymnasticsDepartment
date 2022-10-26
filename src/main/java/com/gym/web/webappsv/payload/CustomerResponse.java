@@ -20,16 +20,16 @@ public class CustomerResponse {
     private String dob;
     private String phoneNumber;
 
-    private List<Subscribe> subscribes;
-    public List<Subscribe> getSubscribes() {
-        return subscribes == null ? null : new ArrayList<>(subscribes);
-    }
-    public void setSubscribe(List<Subscribe> subscribes) {
-        if(subscribes == null) {
-            this.subscribes = null;
-        }
-        else {
-            this.subscribes = Collections.unmodifiableList(subscribes);
-        }
-    }
+//    private List<Subscribe> subscribes;
+//    public List<Subscribe> getSubscribes() {
+//        return subscribes == null ? null : new ArrayList<>(subscribes);
+//    }
+//    public void setSubscribe(List<Subscribe> subscribes) {
+//        if(subscribes == null) {
+//            this.subscribes = null;
+//        }
+//        else {
+//            this.subscribes = Collections.unmodifiableList(subscribes);
+//        }
+//    }
 }

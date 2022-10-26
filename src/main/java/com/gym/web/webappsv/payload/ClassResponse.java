@@ -15,8 +15,27 @@ public class ClassResponse {
     private Instant closeDate;
     private Instant startDate;
     private int maxStudent;
-    private String personalTrainerId;
-    private String courseId;
+
+    private PersonalTrainer personalTrainer;
+    private Course course;
+
+    public PersonalTrainer getPersonalTrainer() {
+        return personalTrainer;
+    }
+
+    public void setPersonalTrainer(PersonalTrainer personalTrainer) {
+        this.personalTrainer = personalTrainer;
+    }
+
+    public Course getCourse() {
+        return course;
+    }
+
+    public void setCourse(Course course) {
+        this.course = course;
+    }
+    //    private Long personalTrainerId;
+//    private Long courseId;
 
     public Long getId() {
         return id;
@@ -26,21 +45,21 @@ public class ClassResponse {
         this.id = id;
     }
 
-    public String getPersonalTrainerId() {
-        return personalTrainerId;
-    }
+//    public Long getPersonalTrainerId() {
+//        return personalTrainerId;
+//    }
+//
+//    public void setPersonalTrainerId(Long personalTrainerId) {
+//        this.personalTrainerId = personalTrainerId;
+//    }
 
-    public void setPersonalTrainerId(String personalTrainerId) {
-        this.personalTrainerId = personalTrainerId;
-    }
-
-    public String getCourseId() {
-        return courseId;
-    }
-
-    public void setCourseId(String courseId) {
-        this.courseId = courseId;
-    }
+//    public Long getCourseId() {
+//        return courseId;
+//    }
+//
+//    public void setCourseId(Long courseId) {
+//        this.courseId = courseId;
+//    }
 
     private List<Subscribe> subscribes;
 
